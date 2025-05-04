@@ -1,0 +1,33 @@
+{
+  "name": "Youtube-A",
+  "description": "Base level Youtube extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["management", "storage", "scripting", "tabs", "activeTab"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "icons": {
+    "16": "./img/channel.png",
+    "32": "./img/channel.png",
+    "48": "./img/channel.png",
+    "128": "./img/channel.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "icons": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Click Me"
+  }
+}
